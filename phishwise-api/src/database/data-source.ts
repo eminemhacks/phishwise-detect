@@ -29,10 +29,7 @@ export const AppDataSource = new DataSource({
   ssl: useSsl ? { rejectUnauthorized: false } : false,
   entities: [User, Progress, AuthToken, Category, Lesson, Quiz, QuizAttempt, Scan],
   // In a compiled build the migrations are .js under dist; in ts-node they are .ts.
-  migrations: [
-    'src/database/migrations/*.ts',
-    'dist/database/migrations/*.js',
-  ],
+  migrations: ['src/database/migrations/*.ts'],
   synchronize: false,
   logging: ['error', 'warn'],
 });
